@@ -1,5 +1,5 @@
 <?php
- session_start();
+session_start();
  include('includes/header.php'); ?>
 
 <div class="py-5">
@@ -18,7 +18,7 @@
                                 unset($_SESSION['message']);
                             }?>
 
-          <h4>home page</h4> 
+          <h4>home page <i class="fa fa-user"></i></h4> 
           </div>
         </div>
     </div>
