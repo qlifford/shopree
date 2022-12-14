@@ -28,10 +28,66 @@
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/perfect-scrollbar.min.js"></script>
   <script src="assets/js/smooth-scrollbar.min.js"></script>
-<!--   
-  <scriptsrc="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></scriptsrc=>
-  <script src="assets/js/custom.js"></script>
-   -->
+  <!-- <script src="assets/js/custom.js"></script> -->
+  
+  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+  <script src="assets/js/sweetalert.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $('.delete_product_btn').click(function (e) { 
+        e.preventDefault();
+        // console.log("heloo");
+
+        var id = $(this).val();
+        // console.log(id);
+       // alert(id);
+
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this file!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => 
+    {
+      if (willDelete) 
+      {
+            $.ajax({
+              method: "post",
+              url: "./code.php",
+              data: {
+                'product_id':id,
+                'delete_product_btn': true
+              },
+              success: function (response) {
+                if(response == 200)
+                {
+                  swal("Success!","Product Deleted!","success");
+                  $("#products_table").load(location.href + " #products_table");
+
+                }
+                else if(response == 500)
+                {
+                  swal("Error!","Something went wrong!", "error");
+ 
+                }
+               
+          }
+        });
+       
+      } 
+    
+    });
+
+  });
+});
+
+  </script>
+
+  
 
   </body>
 </html>

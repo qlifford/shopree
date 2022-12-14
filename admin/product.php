@@ -26,7 +26,7 @@ include('includes/header.php');
                 <div class="card-header">
                      <h4>Products</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body" id ="products_table">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -52,25 +52,25 @@ include('includes/header.php');
                                      <td>
                                          <img src="../uploads/<?= $item['image'];?>" width="50px" height="50px">                                       
                                     </td>
-                                     <td><?= $item['status'] == '0'? "visible":"hidden"?></td>
-                                    <td> <a href="edit-product.php?id=<?= $item['id']; ?>" class="btn btn-sm btn-info">Edit</a>
-                                   <td>
+                                <td><?= $item['status'] == '0'? "visible":"hidden"?></td>
+                                <td> <a href="edit-product.php?id=<?= $item['id']; ?>" class="btn btn-sm btn-info">Edit</a>
+                                <td>
                                    <form action="code.php" method="post">
-                                        <input type="hidden" name="product_id" value="<?= $item['id'];?>">
-                                    <button type="submit" class="btn btn-sm btn-primary delete_product_btn">Delete</button>
+                                        <input type="hidden" name="product_id">
+                                        <button type="button" class="btn btn-sm btn-danger delete_product_btn" value="<?= $item['id']; ?>">Delete</button>
                                     </form>
                                    </td>
-                                </td>
-                                        </tr>
+                               
+                            </tr>
 
                                     <?php
-                                }
+                            }
 
-                            }
+                        }
                             else
-                            {
-                                echo "no records found";
-                            }
+                        {
+                            echo "no records found";
+                        }
                             ?>
                         
                         </tbody>

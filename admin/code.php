@@ -251,6 +251,43 @@ else if(isset($_POST['update_product_btn']))
          }              
            
 }
+
+if (isset($_POST['delete_product_btn'])) 
+{
+   $product_id = mysqli_real_escape_string($con, $_POST['product_id']);
+
+   $product_query = "Select * from products where id = '$product_id'";
+   $product_query_run  = mysqli_query($con, $product_query);
+   $product_data       = mysqli_fetch_array($product_query_run);
+   $image               = $product_data['image'];
+
+   $delete_query = "delete from products where id = '$product_id'";                    
+   $delete_query_run  = mysqli_query($con, $delete_query);   
+
+   $product_data       = mysqli_fetch_array($product_query_run);                       
+   $image               = $product_data['image'];
+      
+      
+
+      if($delete_query_run)
+      {
+         if(file_exists(" ../uploads/".$image))
+         {
+         unlink(" ../uploads/".$image);
+         }  
+         echo 200;
+
+         // echo "<script> window.location.href='product.php'</script>";
+         // $_SESSION['message'] = "Product deleted!";
+      }
+      else
+      {
+         echo 500;
+      // echo "<script> window.location.href='product.php'</script>";
+      // $_SESSION['message'] = "Three was fatal error!";
+       }
+   
+}
 else
 {
    header('location: index.php');
