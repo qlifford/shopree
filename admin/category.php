@@ -23,7 +23,7 @@ include('includes/header.php');
 
 
             <div class="card">
-                <div class="card-header">
+                <div class="card-header" id="categories_table">
                      <h4>Categories</h4>
                 </div>
                 <div class="card-body">
@@ -53,15 +53,19 @@ include('includes/header.php');
                                     </td>
                                      <td><?= $item['status'] == '0'? "visible":"hidden"?></td>
                                     <td> <a href="edit-category.php?id=<?= $item['id'];?>" class="btn btn-info">Edit</a>
-                                    <form action="code.php" method="post">
+                                    <!-- <form action="code.php" method="post">
                                         <input type="hidden" name="category_id" value="<?= $item['id'];?>">
-                                    <button type="submit" class="btn btn-primary" name="delete_category_btn">Delete</button>
-                                            </form>
+                                    <button type="submit" class="btn btn-primary" name="delete_category_btn">Delete</button>-->
+                                    <form action="code.php" method="post">
+                                    <input type="hidden" name="category_id" value="<?= $item['id'];?>">
+                                    <button type="button" class="btn btn-sm btn-danger delete_category_btn" value="<?= $item['id']; ?>">Delete</button>
+
+                                         </form>
                                 </td>
                                         </tr>
 
                                     <?php
-                                }
+                            }
 
                             }
                             else

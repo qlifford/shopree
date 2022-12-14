@@ -119,23 +119,25 @@ else if(isset($_POST['delete_category_btn']))
          $delete_query_run  = mysqli_query($con, $delete_query);   
 
          $category_data       = mysqli_fetch_array($category_query_run);                       
-         $image               = $category_data['image'];
+         // $image               = $category_data['image'];
             
             
 
             if($delete_query_run)
             {
-               if(file_exists("../uploads".$image))
+               if(file_exists("../uploads/".$image))
                {
-               unlink("../uploads".$image);
+               unlink("../uploads/".$image);
                }                        
-               echo "<script> window.location.href='category.php'</script>";
-               $_SESSION['message'] = "Category deleted!";
+               echo 200;
+               // "<script> window.location.href='category.php'</script>";
+               // $_SESSION['message'] = "Category deleted!";
             }
             else
             {
-            echo "<script> window.location.href='category.php'</script>";
-            $_SESSION['message'] = "Three was fatal error!";
+               echo 500;
+            // echo "<script> window.location.href='category.php'</script>";
+            // $_SESSION['message'] = "Three was fatal error!";
             }
 
 }
@@ -171,20 +173,27 @@ else if(isset($_POST['add_product_btn']))
 
       if ($product_query_run)
       {
-      echo "<script> window.location.href='add-product.php'</script>";
-      $_SESSION['message'] = "Product added successfully!"; 
+         $_SESSION['message'] = "Product added successfully!";
+         header('location: add-product.php');
+         exit();
+
+      // echo "<script> window.location.href='product.php'</script>";
+      // $_SESSION['message'] = "Product added successfully!"; 
       }
       else
       {
-      echo "<script> window.location.href='add-product.php'</script>";
-      $_SESSION['message'] = "Uknown error occured!";
+         $_SESSION['message'] = "Uknown error occured!";
+         header('location: add-product.php');
+         exit();
+      // $_SESSION['message'] = "Uknown error occured!";
       }
      
    }
    else
    {
-      echo "<script> window.location.href='add-product.php'</script>";
-      $_SESSION['message'] = "All fields must be filled!";
+      $_SESSION['message'] =  "All fields must be filled!";
+      header('location: add-product.php');
+      exit();
 
    }
 
@@ -265,7 +274,7 @@ if (isset($_POST['delete_product_btn']))
    $delete_query_run  = mysqli_query($con, $delete_query);   
 
    $product_data       = mysqli_fetch_array($product_query_run);                       
-   $image               = $product_data['image'];
+   // $image               = $product_data['image'];
       
       
 
