@@ -14,7 +14,7 @@
               <a class="nav-link" href="#">Features</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="category.php">Collections</a>
+              <a class="nav-link" href="categories.php">Collections</a>
             </li>
                   <?php 
               if (isset($_SESSION['auth'])) 

@@ -46,7 +46,7 @@
               }
               else
               {
-                echo "No category available";
+                echo "No product available for this category";
               }
               
               ?>
