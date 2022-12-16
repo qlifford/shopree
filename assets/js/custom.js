@@ -51,18 +51,18 @@ $(document).ready(function () {
       },
         success:function(response){ 
         
-         
-            if(response == 201)
+           if(response ==  201)
+            
+            {  
+                   
+              alertify.success("Product  already in your cart");  
+              console.log(success);          
+            }
+            else if(response == "existing")
             {       
               alertify.success("Product added to cart");            
             }
-            // else if(response ==  202)
-            
-            // {  
-                   
-            //   alertify.success("Product  already in your cart");  
-            //   console.log(success);          
-            // }
+           
               else if(response == 401)
             {            
               alertify.success("Login to continue");                
