@@ -49,21 +49,18 @@ $(document).ready(function () {
         "prod_qty": qty,
         "scope": "add"        
       },
-        success:function(response){ 
-        
+        success:function(response){         
            if(response ==  201)
-            
-            {  
-                   
-              alertify.success("Product  already in your cart");  
-              console.log(success);          
+            {                     
+              alertify.success("Product added to cart");  
+                       
             }
             else if(response == "existing")
             {       
-              alertify.success("Product added to cart");            
-            }
-           
-              else if(response == 401)
+              alertify.success("Product  already in your cart");  
+              // console.log(success);           
+            }           
+            else if(response == 401)
             {            
               alertify.success("Login to continue");                
             }
