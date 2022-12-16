@@ -17,9 +17,7 @@ if(isset($_SESSION['auth']))
               $prod_qty = $_POST['prod_qty'];
               
               $product_query = "insert into carts(user_id,prod_id,prod_qty,date) values('$user_id','$prod_id','$prod_qty',NOW())";
-            
               $product_query_run = mysqli_query($con, $product_query);
-
               if($product_query_run) 
               {
                 echo 201;
