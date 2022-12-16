@@ -81,7 +81,7 @@ elseif(isset($_POST['login_btn']))
 
                     'user_id'   => $userid,
                     'email'     => $useremail,
-                    'name'      => $username,
+                    'name'      => $username
                     ]; 
 
                 $_SESSION['role'] = $role;

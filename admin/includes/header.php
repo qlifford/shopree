@@ -18,6 +18,8 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="assets/css/material-dashboard.min.css" rel="stylesheet" />
   <link id="pagestyle" href="assets/css/style.css" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/> -->
+
 
   <!-- <style>
     .form-control
