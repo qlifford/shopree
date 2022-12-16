@@ -29,7 +29,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="shadow">
-                    <img src="uploads/<?= $product['image']; ?>" alt="Product image" class="w-100 h-100">
+                    <img src="uploads/<?= $product['image']; ?>" alt="Product image" class="w-100 h-150">
                     </div>
                   </div>
                   <div class="col-md-8">

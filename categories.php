@@ -28,10 +28,9 @@
                   ?>
                   <div class="col-md-3 mb-2">
                     <a href="products.php?category=<?= $item['slug']; ?>">
-                    <div class="card shadow">
+                    <div class="card shadow" class="w-100 h-150">
                       <div class="card-body">
-                      <img src="uploads/<?= $item['image']; ?>" alt="I
-                      Category image" class="w-100">
+                        <img src="uploads/<?= $item['image']; ?>" alt="Category image" class="w-100 h-150">
                       <h4 class="text-center"><?= $item['name']; ?></h4>
                       
                       </div>
@@ -46,7 +45,7 @@
               }
               else
               {
-                echo "No product available for this category";
+                echo "No records found ";
               }
               
               ?>
