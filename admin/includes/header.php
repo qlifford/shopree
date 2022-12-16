@@ -17,8 +17,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="assets/css/material-dashboard.min.css" rel="stylesheet" />
+  <link id="pagestyle" href="assets/css/style.css" rel="stylesheet" />
 
-  <style>
+  <!-- <style>
     .form-control
     {
       border: 1px solid #b3a1a1 !important;
@@ -32,7 +33,7 @@
     }
 
 
-  </style>
+  </style> -->
   
 </head>
 

@@ -25,7 +25,7 @@
         </div>
 
         <div class="bg-light py-4">
-            <div class="container mt-3">
+            <div class="container product_data mt-3">
                 <div class="row">
                   <div class="col-md-4">
                     <div class="shadow">
@@ -49,22 +49,28 @@
                       <div class="col-md-6">
                         <h5>Kshs <s class="text-danger"><?= $product['original_price']; ?></s></h5>
                       </div>
-
                     
                     </div>
                     <div class="row">
                       <div class="col-md-4">
-                        <input type="text">
-                      </div>
-                      <div class="row mt-3">
-                        <div class="col-md-6">
-                          <button class="btn btn-danger px-4"><i class="fa fa-shopping-cart me-2"></i>Buy Now</button>
 
+                          <div class="input-group mb-3" style="width:130px">
+                            <button class="input-group-text decrement-btn">-</button>
+
+                            <input type="text" class="form-control input-qty bg-white text-center" value="1" disabled>
+                            <button class="input-group-text increment-btn">+</button>
+                          </div>
+                      </div>
+
+                      <div class="row mt-3">
+                          <div class="col-md-6">
+                          <button class="btn btn-danger px-4 addToCartBtn" value="<?= $product['id']; ?>"><i class="fa fa-shopping-cart me-2"></i>Buy Now</button>
                         </div>
+
                         <div class="col-md-6">
                         <button class="btn btn-primary px-4"><i class="fa fa-heart me-2"></i>Buy Later</button>
-
                         </div>
+                        
                       </div>
                     </div>
                     <hr>

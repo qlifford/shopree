@@ -20,6 +20,8 @@ include('includes/header.php');
 
             <div class="card">
                 <div class="card-header">
+                <a href="category.php" class="btn btn-primary" type="button">Back</a>
+
                     <h4>Add Category</h4>
                 </div>
                     <div class="card-body">

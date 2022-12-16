@@ -23,6 +23,8 @@ include('includes/header.php');
            
             <div class="card">
                 <div class="card-header">
+                <a href="product.php" class="btn btn-primary" type="button">Back</a>
+
                     <h4>Add Product</h4>
                 </div>
                     <div class="card-body">
