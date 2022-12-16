@@ -68,18 +68,21 @@ elseif(isset($_POST['login_btn']))
 
     if(mysqli_num_rows($login_query_run) > 0)
     { 
-        $_SESSION['auth'] = "true";
+        $_SESSION['auth'] = true;
 
         $userdata = mysqli_fetch_array($login_query_run);
+            $userid = $userdata['id'];
             $useremail= $userdata['email'];
             $username= $userdata['name'];
             $role = $userdata['role'];
 
-        $_SESSION['auth_user'] =
-                [
+
+        $_SESSION['auth_user'] = [
+
+                    'user_id'   => $userid,
                     'email'     => $useremail,
                     'name'      => $username,
-                ]; 
+                    ]; 
 
                 $_SESSION['role'] = $role;
 
