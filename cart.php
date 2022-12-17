@@ -70,7 +70,7 @@ include('authenticate.php');
                           </div>
 
                           <div class="col-md-2">
-                            <button class="btn btn-warning btn-sm">
+                            <button class="btn btn-warning btn-sm deleteItem">
                               <i class="fa fa-trash me-2"></i>
                               Remove</button>
                         </div>

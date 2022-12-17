@@ -101,7 +101,7 @@ $(document).ready(function ()
     $(document).on('click', '.deleteItem', function () 
     { 
        
-        var cart_id = $(this).closest('.product_data').find('.cartId').val();
+        var cart_id = $(this).val();
     
         $.ajax({
           method: "post",
@@ -120,7 +120,7 @@ $(document).ready(function ()
                 }
                 else
                 {
-                  // alertify.s
+                 alertify.success(response);
                 }
     
           }
