@@ -17,7 +17,7 @@
     ?>
 </script>
 
-<script>
+<!-- <script>
 $(document).ready(function () {
   
   $(document).on('click', '.updateQty', function () 
@@ -47,7 +47,7 @@ $(document).ready(function () {
 });
 
 
-</script>
+</script> -->
 
 
 
