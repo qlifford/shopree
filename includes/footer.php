@@ -17,6 +17,38 @@
     ?>
 </script>
 
+<script>
+$(document).ready(function () {
+  
+  $(document).on('click', '.updateQty', function () 
+  { 
+    var qty = $(this).closest('.product_data').find('.input-qty').val();
+    // var prod_id = $(this).val();
+    var prod_id = $(this).closest('.product_data').find('.prodId').val();
+
+    
+    $.ajax({
+      method: "post",
+      url: "functions/handlecart.php",
+      data:
+      {
+        "prod_id": prod_id,
+        "prod_qty": qty,
+        "scope": "update" 
+      },
+      success:function(response)
+      {
+        // alert(response);
+
+      }
+    });
+
+});
+});
+
+
+</script>
+
 
 
 

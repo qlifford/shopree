@@ -75,4 +75,14 @@ $(document).ready(function () {
 
     
   });
+  // $(document).ready(function () {
+  
+  //   $(document).on('click','.updateQty', function (e) {
+  
+  // alert("hello");
+  // // console.log(click);
+  
+  // });
+  // });
+  
 });

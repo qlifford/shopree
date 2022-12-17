@@ -2,6 +2,7 @@
 
 include('functions/userfunctions.php'); 
 include('includes/header.php');
+include('authenticate.php');
  
  ?>
 
@@ -59,10 +60,11 @@ include('includes/header.php');
                           </div>
 
                           <div class="col-md-2">
+                            <input type="hidden" class="prodId" value="<?= $citem['prod_id']; ?>">
                               <div class="input-group mb-3" style="width:130px">
-                                <button class="input-group-text decrement-btn">-</button>
+                                <button class="input-group-text decrement-btn updateQty">-</button>
                                 <input type="text" class="form-control input-qty bg-white text-center" value="<?= $citem['prod_qty']; ?>" disabled>
-                                <button class="input-group-text increment-btn">+</button>
+                                <button class="input-group-text increment-btn updateQty">+</button>
                               </div>                          
                           </div>
 
