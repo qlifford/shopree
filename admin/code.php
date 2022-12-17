@@ -1,7 +1,7 @@
 <?php
-
-include ('../config/dbcon.php');
 include('../functions/myfunctions.php');
+include ('../config/dbcon.php');
+
 
 if(isset($_POST['add_category_btn']))
 {
@@ -118,16 +118,11 @@ else if(isset($_POST['delete_category_btn']))
          $delete_query = "delete from categories where id = '$category_id'";                    
          $delete_query_run  = mysqli_query($con, $delete_query);   
 
-         $category_data       = mysqli_fetch_array($category_query_run);                       
-         // $image               = $category_data['image'];
-            
-            
-
             if($delete_query_run)
             {
                if(file_exists("../uploads/".$image))
                {
-               unlink("../uploads/".$image);
+                  unlink("../uploads/".$image);
                }                        
                echo 200;
                // "<script> window.location.href='category.php'</script>";

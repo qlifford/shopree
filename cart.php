@@ -5,7 +5,7 @@ include('includes/header.php');
  
  ?>
 
- <div class="py-3 bg-primary">
+ <div class="py-3 bg-info">
   <div class="container">
     <h6 class="text-white"> 
        <a class="text-white" href="index.php">
@@ -19,42 +19,43 @@ include('includes/header.php');
 </div>
 
 <div class="py-5">
-    <div class="container">
+    <div class="container">           
+      <div class="">
         <div class="row">
           <div class="col-md-12">            
-              <div class="row aligh-items-center">              
-                       <div class="row align-items-center">
-                                <div class="col-md-5">
-                                <h6>Product</h6>
-                            </div>                       
-                               <div class="col-md-3">
-                                <h6>Price</h6>
-                                </div>
+              <div class="row align-items-center">              
+                  <div class="col-md-5">
+                    <h6>Product</h6>
+                  </div>                       
+                <div class="col-md-3">
+                <h6>Price</h6>
+              </div>
 
-                                <div class="col-md-2">
-                                <h6>Quantity</h6>
-                                </div>                                
+              <div class="col-md-2">
+                  <h6>Quantity</h6>
+              </div>                                
 
-                                <div class="col-md-2">
-                                 <h6>Remove</h6>                        
-                          </div>    
+              <div class="col-md-2">
+                  <h6>Remove</h6>                        
+              </div>                      
+            </div>
+                <?php $items = getCartItems(); 
+                  foreach ($items as $citem)
+                  {
+                      ?>
+                    <div class="card product_data shadow-sm mb-3">
+                      <div class="row align-items-center">
                      
-                     </div>
-                     <?php $items = getCartItems(); 
-                     foreach ($items as $citem)
-                      {
-                        ?>
-                        <div class="row align-items-center">
-                          <div class="col-md-2">
+                        <div class="col-md-2">
                             <img src="uploads/<?= $citem['image']; ?>" alt="Image" width="80px">
                           </div>
 
                           <div class="col-md-3">
-                          <h5><?= $citem['name']; ?></h5>
+                            <h5><?= $citem['name']; ?></h5>
                           </div>
 
                           <div class="col-md-3">
-                          <h5>Kshs <?= $citem['selling_price']; ?></h5>
+                            <h5>Kshs <?= $citem['selling_price']; ?></h5>
                           </div>
 
                           <div class="col-md-2">
@@ -65,13 +66,15 @@ include('includes/header.php');
                               </div>                          
                           </div>
 
-                        <div class="col-md-2">
-                            <button class="btn btn-warning">Remove</button>
-                          </div>
-                        </div>                    
-                        <?php   
-                       
-                      }
+                          <div class="col-md-2">
+                            <button class="btn btn-warning btn-sm">
+                              <i class="fa fa-trash me-2"></i>
+                              Remove</button>
+                        </div>
+                      </div>  
+                    </div>                  
+                        <?php                       
+                  }
                         ?>
 
 
@@ -110,6 +113,7 @@ include('includes/header.php');
                      }         
             ?> -->
           </div>
+      </div>
       </div>
     </div>
 </div>
