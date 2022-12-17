@@ -11,7 +11,7 @@
     if($product)
     {
       ?>
-        <div class="py-3 bg-primary">
+        <div class="py-3 bg-success">
               <div class="container">
                 <h6 class="text-white"> 
                 <a class="text-white" href="categories.php">

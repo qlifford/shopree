@@ -1,8 +1,8 @@
 $(document).ready(function () 
 {
-    $(document).on('click','.increment-btn', function () 
-
+    $(document).on('click','.increment-btn', function (e) 
     {
+      e.preventDefault();
       var qty = $(this).closest('.product_data').find('.input-qty').val();
       // alert(qty);
       
@@ -17,8 +17,9 @@ $(document).ready(function ()
 
     });
 
-    $(document).on('click','.decrement-btn', function ()     
+    $(document).on('click','.decrement-btn', function (e)     
     {
+      e.preventDefault();
       var qty = $(this).closest('.product_data').find('.input-qty').val();
       // alert(qty)
       
@@ -31,9 +32,9 @@ $(document).ready(function ()
       }
     });
 
-    $(document).on('click','.addToCartBtn', function () 
+    $(document).on('click','.addToCartBtn', function (e) 
     { 
-          // e.preventDefault();
+           e.preventDefault();
 
         var qty = $(this).closest('.product_data').find('.input-qty').val();
         var prod_id = $(this).val();
@@ -73,10 +74,11 @@ $(document).ready(function ()
  
     });
 
-    $(document).on('click', '.updateQty', function () 
-      { 
+    $(document).on('click', '.updateQty', function (e) 
+    { 
+        e.preventDefault();
+
         var qty = $(this).closest('.product_data').find('.input-qty').val();
-        // var prod_id = $(this).val();
         var prod_id = $(this).closest('.product_data').find('.prodId').val();
     
         
@@ -98,12 +100,14 @@ $(document).ready(function ()
   
     });
 
-    $(document).on('click', '.deleteItem', function () 
-    { 
-       
-        var cart_id = $(this).val();
-    
-        $.ajax({
+    $(document).on('click', '.deleteItem', function (e) 
+    {      
+      e.preventDefault();
+
+      var cart_id = $(this).val(); 
+      // alert(cart_id);
+      
+      $.ajax({
           method: "post",
           url: "functions/handlecart.php",
           data:
@@ -111,21 +115,22 @@ $(document).ready(function ()
             "cart_id": cart_id,
             "scope": "delete" 
           },
-          success:function(response)
-          {
-            if(response ==  200)
-                {                     
-                  alertify.success("Product removed from cart");  
-                  $('#mycart').load(location.href + " #mycart");                          
-                }
-                else
-                {
-                 alertify.success(response);
-                }
-    
-          }
-        });
-  
-    });
+            success:function(response)
+            {
+              if(response ==  200)
+              {                     
+                alertify.success("Item removed from cart");   
+                $('#mycart').load(location.href + " #mycart")                        
+              }
+              else
+              {
+                alertify.success(response);                           
 
+              }
+              // alert(response);
+      
+            }
+      });
+    });
+    
 });

@@ -3,7 +3,7 @@
  include('includes/header.php'); 
  ?>
 
-<div class="py-3 bg-primary">
+<div class="py-3 bg-success">
   <div class="container">
     <h6 class="text-white"> Home / Collections </h6>
   </div>

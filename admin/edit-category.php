@@ -30,7 +30,7 @@ include('includes/header.php');
                 <div class="card">
                 <div class="card-header">
                             <h4>Edit Category
-                            <a href="category.php" class="btn btn-primary float-end">Back</a>
+                            <a href="category.php" class="btn btn-primary btn-sm float-end">Back</a>
                             </h4>
                     </div>
                 <div class="card-body">

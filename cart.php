@@ -6,15 +6,15 @@ include('authenticate.php');
  
  ?>
 
- <div class="py-3 bg-info">
+ <div class="py-3 bg-success">
   <div class="container">
     <h6 class="text-white"> 
        <a class="text-white" href="index.php">
-        Home / 
+        Home  
       </a> 
-        <aclass="text-white" href="cart.php">
-          Cart 
-        </aclass=> 
+        <a class="text-white" href="cart.php">
+        /Cart 
+        </a> 
       </h6>
     </div>
   </div>
@@ -62,7 +62,7 @@ include('authenticate.php');
 
                           <div class="col-md-2">
                             <input type="hidden" class="prodId" value="<?= $citem['prod_id']; ?>">
-                              <div class="input-group mb-3" style="width:130px">
+                              <div class="input-group mb-0" style="width:120px">
                                 <button class="input-group-text decrement-btn updateQty">-</button>
                                 <input type="text" class="form-control input-qty bg-white text-center" value="<?= $citem['prod_qty']; ?>" disabled>
                                 <button class="input-group-text increment-btn updateQty">+</button>
@@ -70,7 +70,7 @@ include('authenticate.php');
                           </div>
 
                           <div class="col-md-2">
-                            <button class="btn btn-warning btn-sm deleteItem">
+                            <button class="btn btn-success btn-sm deleteItem" value="<?= $citem['cid']; ?>">
                               <i class="fa fa-trash me-2"></i>
                               Remove</button>
                         </div>
@@ -81,6 +81,7 @@ include('authenticate.php');
                         ?>
 
             </div>
+            <div class="float-end"></div>
           </div>
         </div>
       </div>
