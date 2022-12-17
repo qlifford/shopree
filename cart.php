@@ -16,10 +16,10 @@ include('authenticate.php');
           Cart 
         </aclass=> 
       </h6>
+    </div>
   </div>
-</div>
 
-<div class="py-5">
+  <div class="py-5">
     <div class="container">           
       <div class="">
         <div class="row">
@@ -40,8 +40,9 @@ include('authenticate.php');
                   <h6>Remove</h6>                        
               </div>                      
             </div>
+            <div id="mycart">
                 <?php $items = getCartItems(); 
-                  foreach ($items as $citem)
+              foreach ($items as $citem)
                   {
                       ?>
                     <div class="card product_data shadow-sm mb-3">
@@ -79,43 +80,9 @@ include('authenticate.php');
                   }
                         ?>
 
-
-
-
-                    <!-- <div class="col-md-6">
-                      <h6>Product</h6>
-                    </div>
-
-                    <div class="col-md-3">
-                      <h6>Quantity</h6>                   
-                        </div>                    
-
-                      <div class="col-md-3">
-                        <h6>Action</h6>
-                      </div>
-
-                    </div>                 
-                    <?php
-                     $items = getCartItems(); 
-                     foreach ($items as $citem)
-                     {
-                      ?>
-                        <div class="row aligh-items-center">
-                            <div class="col-md-2"> 
-                              <img src="uploads/<?= $citem['image']; ?>" alt="Image" width="80px"> 
-                        </div>
-
-                        <div class="col-md-4">
-                          <h5><?= $citem['name']; ?></h5>
-                        </div>
-                    
-                      </div>                    
-                             
-                      <?php
-                     }         
-            ?> -->
+            </div>
           </div>
-      </div>
+        </div>
       </div>
     </div>
 </div>
