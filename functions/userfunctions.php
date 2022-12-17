@@ -32,8 +32,8 @@ include('config/dbcon.php');
   function getCartItems()
   {
     global $con;
-    $user_id = $_SESSION['auth_user']['user_id'];
-    $query = "Select c.id as cid, c.prod_id, prod_qty,  p.id as pid, p.name, p.image, p.selling_price from carts c, products p where c.prod_id = p.id and c.user_id = '$user_id' order by c.id desc";
+    $userId = $_SESSION['auth_user']['user_id'];
+    $query = "Select c.id as cid, c.prod_id, prod_qty,  p.id as pid, p.name, p.image, p.selling_price from carts c, products p where c.prod_id = p.id and c.user_id = '$userId' order by c.id desc";
     return $query_run = mysqli_query($con, $query);
   }
 

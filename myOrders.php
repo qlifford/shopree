@@ -13,7 +13,7 @@ include('authenticate.php');
         Home  
       </a> 
         <a class="text-white" href="myOrders.php">
-        /My Orders 
+        /Orders 
         </a> 
       </h6>
     </div>
