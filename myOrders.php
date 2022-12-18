@@ -26,14 +26,15 @@ include('authenticate.php');
               <div class="col-md-12"> 
                 <table class="table table-bordered table-striped">
                   <thead>
-                    <tr class="">                    
+                                       
+                    <tr>                    
                       <th>ID</th>
                       <th>Tracking No</th>
-                      <th>Price</th>
+                      <th>Total Price</th>
                       <th>Date</th>
                       <th >View</th>                     
                     </tr>
-                  </thead>
+                  </thead>               
                 <tbody>
                   <?php
                           $orders = getOrders();
@@ -48,7 +49,7 @@ include('authenticate.php');
                                       <td> <?= $item['total_price']; ?> </td>
                                       <td> <?= $item['date']; ?> </td>
                                       <td>
-                                          <a href="orderView.php?t=<?= $item['tracking_no']; ?>" class="btn btn-success">View details</a>
+                                          <a href="orderView.php?t=<?= $item['tracking_no']; ?>" class="btn btn-info">View details</a>
                                       </td>
                                   </tr>
                                 <?php
