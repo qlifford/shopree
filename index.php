@@ -1,14 +1,17 @@
 <?php
 session_start();
- include('includes/header.php'); ?>
+ include('includes/header.php');
+ include('includes/slider.php');
+ 
+ ?>
 
 <div class="py-5">
     <div class="container">
         <div class="row">
           <div class="col-md-12">
-                  <?php 
-                            if(isset($_SESSION['message'])) 
-                            {?>
+            <?php 
+                        if(isset($_SESSION['message'])) 
+                        {?>
                                 <div class="alert alert-info alert-dismissible fade show" role="alert">
                                     <strong>Hey!</strong> <?= $_SESSION['message'];?>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -16,7 +19,8 @@ session_start();
 
                                 <?php
                                 unset($_SESSION['message']);
-                            }?>
+                        }
+            ?>
 
           <h4>home page <i class="fa fa-user"></i></h4> 
           </div>
