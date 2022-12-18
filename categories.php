@@ -4,9 +4,16 @@
  ?>
 
 <div class="py-3 bg-success">
-  <div class="container">
-    <h6 class="text-white"> Home / Collections </h6>
-  </div>
+    <div class="container">
+      <h6>
+      <a href="index.php" class="text-white">
+        Home /
+        </a>
+      <a href="" class="text-white">
+      Collections
+        </a>
+        </h6>
+    </div>
 </div>
 <div class="py-5">
     <div class="container">

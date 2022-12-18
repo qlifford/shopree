@@ -17,9 +17,9 @@
             <div class="py-3 bg-primary">
               <div class="container">
                 <h6 class="text-white"> 
-                <a class="text-white" href="categories.php">
+              <a href="index.php" class="text-white" >  
                     Home / 
-                  </a>
+              </a>
                   <a class="text-white" href="categories.php">
                       Collections / 
                   </a>

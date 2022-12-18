@@ -32,7 +32,7 @@ if(isset($_SESSION['auth']))
             {
               $totalPrice += $citem['selling_price'] * $citem['prod_qty'];                
             }
-            $tracking_no = "dere".rand(111,999).substr($phone,2);
+            $tracking_no = "unatrackiwa".rand(111,999).substr($phone,2);
             $insert_query = "INSERT INTO orders(tracking_no,name,user_id,email,phone,address,pincode,payment_mode,total_price) VALUES('$tracking_no','$name','$userId','$email','$phone','$address','$pincode','$payment_mode','$totalPrice')";
             $insert_query_run = mysqli_query($con, $insert_query);
 
@@ -44,10 +44,23 @@ if(isset($_SESSION['auth']))
                 $prod_id = $citem['prod_id'];
                 $prod_qty = $citem['prod_qty'];
                 $price = $citem['selling_price'];
+
                 $insert_items_query = "insert into order_items(order_id,prod_id,qty,price) values('$order_id','$prod_id','$prod_qty','$price')";
                 $insert_items_query_run = mysqli_query($con, $insert_items_query);
+
+                $product_query = "select * from products where id = '$prod_id' limit 1";
+                $product_query_run = mysqli_query($con, $product_query);
+
+                $productData = mysqli_fetch_array($product_query_run);
+                $current_qty = $productData['qty'];
+
+                $new_qty = $current_qty - $prod_qty;
+
+                $updateQty_query = "update products set qty = '$new_qty' where id = '$prod_id'";
+                $updateQty_query_run = mysqli_query($con, $updateQty_query);
+
               }
-              $deleteCartQuery = "delete from carts where user_id = '$userId'";
+              $deleteCartQuery = "Delete from carts where user_id = '$userId'";
               $deleteCartQuery_run = mysqli_query($con, $deleteCartQuery);
 
 
@@ -56,7 +69,7 @@ if(isset($_SESSION['auth']))
               die();
 
             }
-
+          
       } 
 
 }

@@ -23,7 +23,8 @@ include('config/dbcon.php');
     return $query_run = mysqli_query($con, $query);
   }
 
-  function getIDActive($table, $id){
+  function getIDActive($table, $id)
+  {
     global $con;
     $query = "Select * from $table where id='$id' and status='0'";
     return $query_run = mysqli_query($con, $query);
@@ -37,11 +38,29 @@ include('config/dbcon.php');
     return $query_run = mysqli_query($con, $query);
   }
 
+  function getOrders()
+  {
+    global $con;
+    $userId = $_SESSION['auth_user']['user_id'];
+
+    $query = "Select * from orders where user_id='$userId' order by id desc";
+    return $query_run = mysqli_query($con, $query);
+  }
+
   function redirect($url, $message)
   {
     $_SESSION['message'] = $message;
     header('location;'.$url);
     exit();
+  }
+
+  function checkTrackingNoValid($trackingNo)
+  {
+    global $con;
+    $userId = $_SESSION['auth_user']['user_id'];
+
+    $query = "Select * from orders where tracking_no ='$trackingNo' and user_id = '$userId'";
+    return mysqli_query($con, $query);
   }
 
 ?>
