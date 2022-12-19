@@ -57,35 +57,40 @@ include('authenticate.php');
           </div>
           <div class="col-md-5">     
             <h5>Order Details</h5>   
-            <hr>          
+            <hr> 
+            
                            
-              <?php $items = getCartItems(); 
-              $totalPrice = 0;
-              foreach ($items as $citem)
-                  {
-                      ?>
-                    <div class="mb-1 border">
-                      <div class="row align-items-center">                     
-                        <div class="col-md-2">
-                            <img src="uploads/<?= $citem['image'] ?>" alt="Image" width="80px">
-                          </div>
+                  <?php 
+                  $items = getCartItems(); 
+                  $totalPrice = 0;
+                  foreach ($items as $citem)
+                      {
+                          ?>
+                        <div class="mb-1 border">
+                          <div class="row align-items-center">                     
+                            <div class="col-md-2">
+                                <img src="uploads/<?= $citem['image'] ?>" alt="Image" width="80px">
+                              </div>
 
-                          <div class="col-md-5">
-                            <label><?= $citem['name'] ?></label>
-                          </div>
+                              <div class="col-md-5">
+                                <label><?= $citem['name'] ?></label>
+                              </div>
 
-                          <div class="col-md-3">
-                            <label>Kshs <?= $citem['selling_price'] ?></label>
-                          </div>
-                          <div class="col-md-2">
-                            <label>X <?= $citem['prod_qty'] ?></label>
-                          </div>
-                      </div>  
-                    </div>                  
-                        <?php 
-                        $totalPrice += $citem['selling_price'] *  $citem['prod_qty'];                
-                  }
-                        ?>
+                              <div class="col-md-3">
+                                <label>Kshs <?= $citem['selling_price'] ?></label>
+                              </div>
+                              <div class="col-md-2">
+                                <label>X <?= $citem['prod_qty'] ?></label>
+                              </div>
+                          </div>  
+                        </div> 
+                          
+                                       
+                            <?php 
+                            $totalPrice += $citem['selling_price'] *  $citem['prod_qty'];                
+                      }
+                            ?>
+          
                         <hr>
                         <h5>Total Price : <span class="float-end fw-bold"><?= $totalPrice ?></span></h5>
                         <div class="">

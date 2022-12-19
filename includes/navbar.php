@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white shadow fw-Bold">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-primary text-white shadow fw-Bold">
   <div class="container">
         <a class="navbar-brand" href="index.php">SHOPREE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
                           <?php echo $_SESSION['auth_user']['name'];?>
                        </a>
                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="myOrders.php">My Orders</a></li>
                           <li><a class="dropdown-item" href="#">Another action</a></li>
                           <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                         </ul>

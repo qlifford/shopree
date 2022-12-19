@@ -48,10 +48,10 @@ $data = mysqli_fetch_array($orderData);
     <div class="">
       <div class="row">
             <div class="col-md-12"> 
-                <div class="card">
+            <div class="card">
                   <div class="card-header bg-success">
                    <span class="text-white text-center fs-4">View Order</span> 
-                    <a href="myOrders.php" class="btn btn-warning float-end"> <i class="fa fa-reply"></i>Back</a>
+                    <a href="myOrders.php" class="btn btn-warning float-end"> <i class="fa fa-reply"></i> Back</a>
                   </div>
                   <div class="card-bady m-2">
                       <div class="row">
@@ -168,7 +168,7 @@ $data = mysqli_fetch_array($orderData);
                           }
                           else if($data['status'] == 2)
                           {
-                            echo "Camcelled";
+                            echo "Cancelled";
                           }
                           
                           ?>
@@ -177,7 +177,7 @@ $data = mysqli_fetch_array($orderData);
                       </div>
                     </div>
                   </div>
-          </div>        
+                 
         </div>
       </div>
     </div>

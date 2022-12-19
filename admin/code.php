@@ -17,7 +17,7 @@ if(isset($_POST['add_category_btn']))
 
                      $image = $_FILES['image']['name'];
                   
-                     $path = "../uploads";
+                     $path = "../uploads/";
 
                      $image_ext = pathinfo( $image, PATHINFO_EXTENSION);
                      $filename = time().'.'.$image_ext;
@@ -36,6 +36,7 @@ if(isset($_POST['add_category_btn']))
                               echo "<script> window.location.href='add-category.php'</script>";
                               $_SESSION['message'] = "Category added successfully!";
                               exit();
+                              
                               // redirect(" ../add-category.php", "Category added successfully");
 
                            }
@@ -75,11 +76,11 @@ else if(isset($_POST['update_category_btn']))
                         {
                         $update_filename = $old_image;
                         }
-                        $path = "../uploads";
+                        $path = "../uploads/";
 
                         $update_query = "Update categories set name='$name', slug='$slug',description='$description', meta_title='$meta_title',                    meta_description='$meta_description', meta_keywords='$meta_keywords',status='$status', popular='$popular', image='$update_filename' where id='$category_id'";
 
-                        $update_query_run = mysqli_query($con,$update_query);
+                        $update_query_run = mysqli_query($con, $update_query);
                         if($update_query_run)
                         {
                            if($_FILES['image']['name'] != "")
@@ -92,13 +93,16 @@ else if(isset($_POST['update_category_btn']))
                               }
 
                            }
-                           echo "<script> window.location.href='edit-category.php?id=$category_id'</script>";
+                           // echo "<script> window.location.href='edit-category.php'</script>";
                            $_SESSION['message'] = "Category updated successfully!";
+                           header("location: category.php?id=$category_id");
+                           die();
                           
                         }
                         else
                         {
-                           echo "<script> window.location.href='category.php?id=$category_id'</script>";
+                           
+                           echo "<script> window.location.href='category.php'</script>";
                            $_SESSION['message'] = "Category update failed!";
 
                         }               
@@ -243,9 +247,10 @@ else if(isset($_POST['update_product_btn']))
                }
 
             }
-            echo "<script> window.location.href='edit-product.php?id=$product_id'</script>";
             $_SESSION['message'] = "Product updated successfully!";
-           
+            header("location: product.php?id=$product_id");
+            die();
+                     
          }
          else
          {
@@ -292,6 +297,27 @@ if (isset($_POST['delete_product_btn']))
        }
    
 }
+
+else if(isset($_POST['update_order_btn']))
+{
+
+   $track_no = $_POST['tracking_no'];
+   $order_status = $_POST['order_status'];
+
+   $update_order_query = "update orders set status='$order_status' where tracking_no= '$track_no'";
+   $update_order_query_exec = mysqli_query($con, $update_order_query);
+   // if ($update_order_query_exec) 
+   // {   
+      //  redirect("orderView.php?t=$track_no", "Order Status updated");
+      //  exit();
+       $_SESSION['message'] = "Order Status updated!";
+       header("location: orderView.php?t=$track_no");
+       die();
+
+   // }
+
+}
+
 else
 {
    header('location: index.php');

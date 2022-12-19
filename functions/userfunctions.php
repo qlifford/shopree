@@ -8,6 +8,12 @@ include('config/dbcon.php');
     $query = "select * from $table where status ='0'";
     return $query_run = mysqli_query($con, $query);
   }
+  function getAllTrending()
+  {
+    global $con;
+    $query = "select * from products where trending ='1'";
+    return $query_run = mysqli_query($con, $query);
+  }
 
   function getSlugActive($table, $slug)
   {

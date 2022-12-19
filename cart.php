@@ -19,48 +19,47 @@ include('authenticate.php');
     </div>
   </div>
 
-  <div class="py-5">
-    <div class="container">           
-      <div class="">
-        <div class="row">
+<div class="py-5">
+  <div class="container">           
+    <div class="">
+      <div class="row">
+        <div class="">
           <div class="col-md-12"> 
             <div id="mycart">
           <?php 
           $items = getCartItems(); 
                 if (mysqli_num_rows($items) > 0) 
                 {?>           
-                    <div class="row align-items-center">              
+                <div class="row align-items-center">              
                         <div class="col-md-5">
-                          <h6>Product</h6>
+                          <h6 class="fw-bold">Product</h6>
                         </div>                       
                       <div class="col-md-3">
-                      <h6>Price</h6>
+                      <h6 class="fw-bold">Unit Price</h6>
                     </div>
 
                     <div class="col-md-2">
-                        <h6>Quantity</h6>
+                        <h6 class="fw-bold">Quantity</h6>
                     </div>                                
 
                     <div class="col-md-2">
-                        <h6>Remove</h6>                        
+                        <h6 class="fw-bold">Remove</h6>                        
                     </div>                      
-                  </div>
+                </div>
                   <div id=""> 
-                    <?php           
-                      foreach ($items as $citem)
-                        {
-                            ?>
-                          <div class="card product_data shadow-sm mb-3">
-                            <div class="row align-items-center">
-                          
-                              <div class="col-md-2">
-                                  <img src="uploads/<?= $citem['image']; ?>" alt="Image" width="80px">
-                                </div>
+                <?php           
+                foreach ($items as $citem)
+                {
+                ?>
+                <div class="card product_data shadow-sm mb-3">
+                      <div class="row align-items-center">                          
+                          <div class="col-md-2">
+                            <img src="uploads/<?= $citem['image']; ?>" alt="Image" width="80px">
+                          </div>
 
-                                <div class="col-md-3">
-                                  <h5><?= $citem['name']; ?></h5>
-                                </div>
-
+                          <div class="col-md-3">
+                            <h5><?= $citem['name']; ?></h5>
+                          </div>
                                 <div class="col-md-3">
                                   <h5>Kshs <?= $citem['selling_price']; ?></h5>
                                 </div>
@@ -103,12 +102,12 @@ include('authenticate.php');
                   <?php
 
                 }
-            ?>
-            </div>
+          ?>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
 
 <?php include('includes/footer.php'); ?>

@@ -6,6 +6,17 @@ include('includes/header.php');
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+                        <?php 
+                        if(isset($_SESSION['message'])) 
+                        {?>
+                            <div class="alert alert-light alert-dismissible fade-show" role="alert">
+                                <strong></strong> <?= $_SESSION['message'];?>
+                                <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+                        <?php
+                        unset($_SESSION['message']);
+                        }?>
             <?php 
             if(isset($_GET['id']))
             { 
@@ -16,17 +27,7 @@ include('includes/header.php');
                     $data = mysqli_fetch_array($category);
             
                     ?>
-                    <?php 
-                    if(isset($_SESSION['message'])) 
-                        {?>
-                            <div class="alert alert-light alert-dismissible fade show" role="alert">
-                                <strong></strong> <?= $_SESSION['message'];?>
-                                <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-
-                        <?php
-                        unset($_SESSION['message']);
-                        }?>
+                 
                 <div class="card">
                 <div class="card-header">
                             <h4>Edit Category

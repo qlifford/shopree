@@ -48,7 +48,7 @@
                                 <a href="product-view.php?product=<?= $item['slug']; ?>">
                                 <div class="card shadow">
                                   <div class="card-body">
-                                  <img src="uploads/<?= $item['image']; ?>" alt="Product name" class="w-100">
+                                  <img src="uploads/<?= $item['image']; ?>" alt="Product name" width="50px" height="40px">
                                   <h4 class="text-center"><?= $item['name']; ?></h4>
                                   
                                   </div>
